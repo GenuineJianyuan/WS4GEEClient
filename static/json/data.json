@@ -1,0 +1,438 @@
+{
+  "rootId": "a",
+  "nodes": [
+    {
+      "id": "WFS-1",
+      "text": "WFS-1",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-1", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-2",
+      "text": "WFS-2",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-2", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-3",
+      "text": "WFS-3",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-3", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-4",
+      "text": "WFS-4",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-4", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-5",
+      "text": "WFS-5",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-5", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-6",
+      "text": "WFS-6",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-6", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-7",
+      "text": "WFS-7",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-7", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-8",
+      "text": "WFS-8",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-8", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-9",
+      "text": "WFS-9",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-9", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-10",
+      "text": "WFS-10",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-10", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-11",
+      "text": "WFS-11",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-11", "serviceType": "WFS"}
+    },
+    {
+      "id": "WFS-12",
+      "text": "WFS-12",
+      "color": "#ec6941",
+      "borderColor": "#ff875e",
+      "data": {"serviceUrl": "192.168.100.121:8888/wfs/wfs-12", "serviceType": "WFS"}
+    },
+    {
+      "id": "WPS-1",
+      "nodeShape": "1",
+      "text": "WPS-1",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-1", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-2",
+      "nodeShape": "1",
+      "text": "WPS-2",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-2", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-3",
+      "nodeShape": "1",
+      "text": "WPS-3",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-3", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-4",
+      "nodeShape": "1",
+      "text": "WPS-4",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-4", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-5",
+      "nodeShape": "1",
+      "text": "WPS-5",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-5", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-6",
+      "nodeShape": "1",
+      "text": "WPS-6",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-6", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-7",
+      "nodeShape": "1",
+      "text": "WPS-7",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-7", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-8",
+      "nodeShape": "1",
+      "text": "WPS-8",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-8", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-9",
+      "nodeShape": "1",
+      "text": "WPS-9",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-9", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-10",
+      "nodeShape": "1",
+      "text": "WPS-10",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-10", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-11",
+      "nodeShape": "1",
+      "text": "WPS-11",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-11", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-12",
+      "nodeShape": "1",
+      "text": "WPS-12",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-12", "serviceType": "WPS"}
+    },
+    {
+      "id": "WPS-13",
+      "nodeShape": "1",
+      "text": "WPS-13",
+      "color": "#83CDFF",
+      "borderColor": "#5aacff",
+      "data": {"serviceUrl": "192.168.100.121:8888/wps/wps-13", "serviceType": "WPS"}
+    }
+  ],
+  "links": [
+    {
+      "from": "WFS-1",
+      "to": "WPS-1",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-2",
+      "to": "WPS-2",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-3",
+      "to": "WPS-3",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-4",
+      "to": "WPS-4",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-5",
+      "to": "WPS-5",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-6",
+      "to": "WPS-6",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-7",
+      "to": "WPS-7",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-8",
+      "to": "WPS-8",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-9",
+      "to": "WPS-9",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-10",
+      "to": "WPS-10",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-11",
+      "to": "WPS-11",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WFS-12",
+      "to": "WPS-12",
+      "text": "输入",
+      "lineWidth": "1.5",
+      "color": "#933b2e",
+      "fontColor": "#0c0201",
+      "data": {"type": "输入"}
+    },
+    {
+      "from": "WPS-1",
+      "to": "WPS-2",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-2",
+      "to": "WPS-3",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-3",
+      "to": "WPS-4",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-2",
+      "to": "WPS-4",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    },
+    {
+      "from": "WPS-3",
+      "to": "WPS-5",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-7",
+      "to": "WPS-10",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-6",
+      "to": "WPS-8",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-5",
+      "to": "WPS-13",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    },
+    {
+      "from": "WPS-12",
+      "to": "WPS-8",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-9",
+      "to": "WPS-4",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-6",
+      "to": "WPS-1",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    },
+    {
+      "from": "WPS-10",
+      "to": "WPS-3",
+      "text": "前驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "前驱匹配"}
+    },
+    {
+      "from": "WPS-7",
+      "to": "WPS-2",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    },
+    {
+      "from": "WPS-11",
+      "to": "WPS-7",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    },
+    {
+      "from": "WPS-4",
+      "to": "WPS-12",
+      "text": "后驱匹配",
+      "lineWidth": "1.5",
+      "color": "#000000",
+      "fontColor": "#0c0201",
+      "data": {"type": "后驱匹配"}
+    }
+  ]
+}

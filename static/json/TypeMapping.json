@@ -1,0 +1,42 @@
+{
+  "vector": [
+    "application/x-zipped-shp$base64",
+    "application/x-zipped-shp",
+    "text/xml$UTF-8",
+    "text/xml; subtype=gml/3.1.1",
+    "text/xml; subtype=gml/3.2.1"
+  ],
+  "raster": [
+    "image/tiff",
+    "image/tiff$base64",
+    "image/jpeg",
+    "image/png"
+  ],
+  "image": [
+    "image/tiff",
+    "image/tiff$base64",
+    "image/jpeg",
+    "image/png"
+  ],
+  "dem": [
+    "image/tiff",
+    "image/tiff$base64",
+    "image/jpeg",
+    "image/png"
+  ],
+  "text": [
+    "text/plain"
+  ],
+  "literal": [
+    "integer",
+    "float",
+    "string",
+    "boolean",
+    "double",
+    "xs:integer",
+    "xs:float",
+    "xs:string",
+    "xs:boolean",
+    "xs:double"
+  ]
+}

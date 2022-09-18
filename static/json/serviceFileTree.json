@@ -1,0 +1,126 @@
+[
+  {
+    "label": "WMS",
+    "id": "001",
+    "children": [
+      {
+        "label": "ArcGISServer",
+        "id": "0011",
+        "children": [
+          {
+            "label": "ChinaOnlineStreetWarm",
+            "id": "FYGP446TF4LY"
+          },
+          {
+            "label": "ChinaOpenStreet",
+            "id": "00112"
+          }
+        ]
+      },
+      {
+        "label": "USGS_Web_Map_Services",
+        "id": "0012",
+        "children": [
+          {
+            "label": "National Mineral Resource Assessment",
+            "id": "00121"
+          },
+          {
+            "label": "Active mines and mineral plants ",
+            "id": "00122"
+          },
+          {
+            "label": "World copper smelters",
+            "id": "00123"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "WFS",
+    "id": "002",
+    "children": [
+      {
+        "label": "WFS-1",
+        "id": "0021",
+        "children": [
+          {
+            "label": "layer-wfs-1-1",
+            "id": "00211"
+          },
+          {
+            "label": "layer-wfs-1-2",
+            "id": "00212"
+          }
+        ]
+      },
+      {
+        "label": "USGS_Web_Map_Services",
+        "id": "0022",
+        "children": [
+          {
+            "label": "Active mines and mineral plants of the US",
+            "id": "00221"
+          },
+          {
+            "label": "layer-wfs-2-2",
+            "id": "00222"
+          },
+          {
+            "label": "World Copper Smelters",
+            "id": "00223"
+          },
+          {
+            "label": "National Mineral Resource Assessment",
+            "id": "00224"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "WCS",
+    "id": "003",
+    "children": [
+      {
+        "label": "LE07_WuHan",
+        "id": "0031",
+        "children": [
+          {
+            "label": "LE07_L1GT_123039_20210323_20210323_01_RT_B7",
+            "id": "GLKJYF84GFJF634"
+          }
+        ]
+      },
+      {
+        "label": "LE07_EZhou",
+        "id": "0032",
+        "children": [
+          {
+            "label": "LE07_L2GT_123039_20210323_20210323_01_RT_B7",
+            "id": "00321"
+          },
+          {
+            "label": "LE07_L2GT_123039_20210323_20210323_02_RT_B7",
+            "id": "00322"
+          }
+        ]
+      },
+      {
+        "label": "LE07_HuangGang",
+        "id": "0033",
+        "children": [
+          {
+            "label": "LE07_L2GT_123039_20210323_20210323_01_RT_B8",
+            "id": "00331"
+          },
+          {
+            "label": "LE07_L2GT_123039_20210323_20210323_02_RT_B8",
+            "id": "00332"
+          }
+        ]
+      }
+    ]
+  }
+]

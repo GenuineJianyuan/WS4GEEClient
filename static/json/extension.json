@@ -1,0 +1,35 @@
+{
+  "name": "QualityAssurance",
+  "uri": "http://geosquare/schema/bpmn/geoextention",
+  "prefix": "ge",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "NodeDetails",
+      "extends": [
+        "bpmn:FlowNode"
+      ],
+      "properties": [
+        {
+          "name": "nodeRestriction",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "nodeIncoming",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "nodeOutgoing",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "emumerations": [],
+  "associations": []
+}

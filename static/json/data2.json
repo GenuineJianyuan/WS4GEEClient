@@ -1,0 +1,1518 @@
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "WMS",
+      "keyword": "WMS",
+      "base": "WMS",
+      "icon" : "rect"
+    },
+    {
+      "name": "WFS",
+      "keyword": "WFS",
+      "base": "WFS",
+      "icon" : "roundRect"
+    },
+    {
+      "name": "WPSCluster",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WMS1",
+      "abstract": "服务名称：WMS1 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS2",
+      "abstract": "服务名称：WMS2 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS3",
+      "abstract": "服务名称：WMS3 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS4",
+      "abstract": "服务名称：WMS4 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS5",
+      "abstract": "服务名称：WMS5 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS6",
+      "abstract": "服务名称：WMS6 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WMS7",
+      "abstract": "服务名称：WMS7 服务类型：WMS  服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WMS",
+      "symbol" : "rect"
+    },
+    {
+      "name": "WFS1",
+      "abstract": "服务名称：WFS1 服务类型：WFS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS2",
+      "abstract": "服务名称：WFS2 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS3",
+      "abstract": "服务名称：WFS3 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS4",
+      "abstract": "服务名称：WFS4 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS5",
+      "abstract": "服务名称：WFS5 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WFS6",
+      "abstract": "服务名称：WFS6 服务类型：WFS 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WFS",
+      "symbol" : "roundRect"
+    },
+    {
+      "name": "WPS1服务簇",
+      "abstract": "服务簇名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2服务簇",
+      "abstract": "服务簇名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3服务簇",
+      "abstract": "服务簇名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4服务簇",
+      "abstract": "服务簇名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5服务簇",
+      "abstract": "服务簇名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6服务簇",
+      "abstract": "服务簇名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ,
+    {
+      "name": "WPS7服务簇",
+      "abstract": "服务簇名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPSCluster",
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "WPS1服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS2服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS3服务簇",
+      "target": "WPS4服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS5服务簇",
+      "target": "WPS6服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS2服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS6服务簇",
+      "target": "WPS7服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WPS7服务簇",
+      "target": "WPS3服务簇",
+      "name": "下一步"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS1",
+      "target": "WPS1服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS2",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS3",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS4",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS5",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WFS6",
+      "target": "WPS6服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS1",
+      "target": "WPS3服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS2",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS3",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS4",
+      "target": "WPS7服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS5",
+      "target": "WPS4服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS6",
+      "target": "WPS5服务簇",
+      "name": "输入"
+    },
+    {
+      "source": "WMS7",
+      "target": "WPS2服务簇",
+      "name": "输入"
+    }
+  ]
+}

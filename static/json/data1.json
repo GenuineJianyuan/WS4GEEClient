@@ -1,0 +1,260 @@
+{
+  "type": "force",
+  "categories": [
+    {
+      "name": "Constraint",
+      "keyword": "Constraint",
+      "base": "Constraint",
+      "icon" : "circle"
+    },
+    {
+      "name": "WPS",
+      "keyword": "WPS",
+      "base": "WPS",
+      "icon" : "circle"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Constraint1",
+      "abstract": "Constraint1",
+      "category": "Constraint",
+      "symbolSize": 50,
+      "value": 6,
+      "symbol" : "circle"
+    },
+    {
+      "name": "Constraint2",
+      "abstract": "Constraint1",
+      "category": "Constraint",
+      "symbolSize": 50,
+      "value": 6,
+      "symbol" : "circle"
+    },
+    {
+      "name": "Constraint3",
+      "abstract": "Constraint1",
+      "category": "Constraint",
+      "symbolSize": 50,
+      "value": 6,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS1",
+      "abstract": "服务名称：WPS1 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 20,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS2",
+      "abstract": "服务名称：WPS2 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 20,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS3",
+      "abstract": "服务名称：WPS3 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 20,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS4",
+      "abstract": "服务名称：WPS4 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 10,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS5",
+      "abstract": "服务名称：WPS5 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 30,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS6",
+      "abstract": "服务名称：WPS6 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 15,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS7",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 10,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS8",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 30,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS9",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 20,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS10",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 15,
+      "value": 2,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS11",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 10,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS12",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 30,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS13",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 15,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS14",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 20,
+      "value": 1,
+      "symbol" : "circle"
+    },
+    {
+      "name": "WPS15",
+      "abstract": "服务名称：WPS7 服务类型：WPS 输入类型：XXXXX 输出类型：XXXXXXXXXXXX 服务摘要：XXXXXXXXXXXXXXXXXXXX",
+      "category": "WPS",
+      "symbolSize": 10,
+      "value": 3,
+      "symbol" : "circle"
+    }
+  ],
+  "links": [
+    {
+      "source": "Constraint1",
+      "target": "WPS1",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS2",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS3",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS4",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS5",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS6",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS7",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS8",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS9",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS10",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint3",
+      "target": "WPS11",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint3",
+      "target": "WPS12",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint3",
+      "target": "WPS13",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint3",
+      "target": "WPS14",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint3",
+      "target": "WPS15",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS6",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS10",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint1",
+      "target": "WPS15",
+      "name": "约束"
+    },
+    {
+      "source": "Constraint2",
+      "target": "WPS15",
+      "name": "约束"
+    }
+  ]
+}
