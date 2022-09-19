@@ -70,14 +70,12 @@
                         type="textarea"
                         :autosize="{ minRows: 2, maxRows: 4}"
                         placeholder="Abstract for the target Data/Dataset"
-                        v-model="dataForm.abstract">
+                        v-model="dataForm.dataAbstract">
                       </el-input>
                     </el-form-item>
-
                   </el-form>
                   <div slot="footer" class="dialog-footer">
-                    <el-button type="primary" @click="moreOption = false">确 定</el-button>
-                    <el-button @click="moreOption = false">取 消</el-button>
+                    <el-button type="primary" @click="moreOption = false">Close</el-button>
                   </div>
                 </el-dialog>
               </el-form-item>
@@ -119,7 +117,7 @@
             <div>
               <el-table
                 ref="singleTable" :data="tableData" border highlight-current-row @current-change="handleCurrentChange"
-                style="width: 100%" height="180" :row-style="setRowStyle" :cell-style="{padding: '0'}"
+                style="width: 100%" height="180"  :cell-style="{padding: '0'}"
                 @row-click="handleCurrentClick" class="new_table_row">
                 <el-table-column type="index" width="50"></el-table-column>
                 <el-table-column property="identifier" label="Available Services"></el-table-column>
@@ -147,13 +145,20 @@
               <el-button @click="callWCS('getcapabilities')">GetCapabilities</el-button>
               <el-button @click="callWCS('describecoverage')">DescribeCoverage</el-button>
               <el-button @click="callWCS('getcoverage')">GetCoverage</el-button>
-              <el-dialog title="GetCoverage" :visible.sync="coverageDialog">
+              <el-dialog title="Coverage" :visible.sync="coverageInfoDialog">
+                <el-input type="textarea" :rows="10" resize="none" v-model="xmlInfoContent"></el-input>
+                <div slot="footer" class="dialog-footer">
+                  <el-button type="primary" @click="coverageInfoDialog=false">Close</el-button>
+                </div>
+              </el-dialog>
+              <el-dialog title="GetCoverage" :visible.sync="coverageDialog"
+                         :close-on-click-modal="false">
                 <el-input type="textarea" :rows="10" resize="none" v-model="xmlContent"></el-input>
                 <span>Result:</span>
                 <el-input type="textarea" :rows="10" resize="none" v-model="xmlResult"></el-input>
                 <div slot="footer" class="dialog-footer">
                   <el-button type="primary" @click="sendRequest">Submit</el-button>
-                  <el-button @click="coverageDialog = false">取 消</el-button>
+                  <el-button @click="coverageDialog = false">Cancel</el-button>
                 </div>
               </el-dialog>
             </div>
@@ -417,6 +422,8 @@ export default {
       editName: false,
       selectedData: '',
       coverageDialog: false,
+      coverageInfoDialog:false,
+      xmlInfoContent:'',
       xmlContent: '',
       xmlResult:''
     }
@@ -546,15 +553,11 @@ export default {
       } else {
         this.dataForm.service = 'WCS'
       }
-
-
-    },
-    setRowStyle() {
-
     },
 
     callWCS(service) {
       let url = 'api/ows/' + this.groupName + '/wcs'
+
       if (service == 'getcapabilities') {
         this.$http({
           method: 'get',
@@ -565,7 +568,9 @@ export default {
             request: 'GetCapabilities'
           }
         }).then(response => {
-          console.log(response.data)
+          // console.log(response.data)
+          this.coverageInfoDialog=true
+          this.xmlInfoContent=vkbeautify.xml(response.data)
         })
       } else if (service == 'describecoverage') {
         if (this.selectedData === '') {
@@ -581,10 +586,12 @@ export default {
             identifiers: this.selectedData
           }
         }).then(response => {
-          console.log(response.data)
+          // console.log(response.data)
+          this.coverageInfoDialog=true
+          this.xmlInfoContent=vkbeautify.xml(response.data)
         })
       } else if (service == 'getcoverage') {
-        this.coverageDialog = true
+
         // if (this.selectedData === '') {
         //   return
         // }
@@ -596,6 +603,7 @@ export default {
           }
         }).then(response => {
           this.loading=false
+          this.coverageDialog = true
           this.xmlContent = vkbeautify.xml(response.data)
         })
       }

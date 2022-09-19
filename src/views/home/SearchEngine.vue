@@ -29,14 +29,6 @@
             </el-form-item>
           </el-form>
         </el-col>
-        <!--        <el-col>-->
-        <!--          <div style="float: right;margin-bottom: 10px">-->
-        <!--            <el-button type="primary" size="small" v-if="searchForm.type=='WCS'">Check all WCS(GetCapabilities)</el-button>-->
-        <!--            <el-button type="primary" size="small" v-if="searchForm.type=='WCS'">DescribeCoverage(All)</el-button>-->
-        <!--            <el-button type="primary" size="small" v-if="searchForm.type=='WPS'">Check all WPS(GetCapabilities)</el-button>-->
-        <!--            <el-button type="primary" size="small" v-if="searchForm.type=='WPS'">DescribeProcess(All)</el-button>-->
-        <!--          </div>-->
-        <!--        </el-col>-->
       </el-row>
     </div>
     <div class="section1">
@@ -199,21 +191,43 @@ export default {
     },
 
     handleDetail(index, row) {
-      // console.log(index, row)
-      let url = 'api/ows/' + row.group + '/wcs'
-      this.$http({
-        method: 'get',
-        url: url,
-        params: {
-          service: 'WCS',
-          version: '1.1.0',
-          request: 'describecoverage',
-          identifiers: row.id
-        }
-      }).then(response => {
-        console.log(response.data)
-        // this.resultDialog = true
-      })
+      console.log(index, row)
+      if (row.type==='WCS'){
+        let url = 'api/ows/' + row.group + '/wcs'
+        this.$http({
+          method: 'get',
+          url: url,
+          params: {
+            service: 'WCS',
+            version: '1.1.0',
+            request: 'describecoverage',
+            identifiers: row.id
+          }
+        }).then(response => {
+          // console.log(response.data)
+          this.xmlResult=response.data
+          this.resultDialog = true
+        })
+      }else if (row.type==='WPS'){
+        console.log(row.name)
+        let url='api/ws4gee/wps'
+        this.$http({
+          method: 'get',
+          url: url,
+          params: {
+            request:'DescribeProcess',
+            service: 'WPS',
+            version: '1.1.0',
+            identifier: row.name,
+            id:row.id
+          }
+        }).then(response => {
+          // console.log(response.data)
+          this.xmlResult=response.data
+          this.resultDialog = true
+        })
+      }
+
     },
     handlePreview(index, row) {
       this.previewDialog = true
