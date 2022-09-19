@@ -1,16 +1,21 @@
 <template>
   <div class="home-container">
     <el-header class="header">
-      <div class="logo">WS4GEE Client System</div>
+      <div class="logo">Welcome to WS4GEE Client System</div>
     </el-header>
-
+    <el-carousel indicator-position="outside">
+      <el-carousel-item v-for="item in this.service" :key="item" style="text-align: center"
+                        @click.native="carouselClick(item)">
+        <h1>{{ item }}</h1>
+      </el-carousel-item>
+    </el-carousel>
 
     <el-row class="box-otherinfo" gutter=10>
       <el-col :xs="24" :sm="24" :lg="8">
         <div id="otherinfo1" class="otherinfo1" style="text-align: center;">
           <svg-icon style="width: 50px; height: 50px; margin-top: 50px" iconClass="dizhi"/>
           <div style="wmargin-bottom: 5px; line-height: 35px;font-size: 16px">Address</div>
-          <div style="wmargin-bottom: 5px; line-height: 35px;font-size: 16px">China ·  129 Luoyu Street</div>
+          <div style="wmargin-bottom: 5px; line-height: 35px;font-size: 16px">China · 129 Luoyu Street</div>
         </div>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="8">
@@ -37,11 +42,26 @@ export default {
   data() {
     return {
       // searchWidth:(window.innerWidth - 20)/3 + 'px',
-
+      service: ["Service Registration", "Resource Preview", "Process Client", "Tutorial"]
     };
   },
   methods: {
-
+    carouselClick(value) {
+      console.log(value)
+      let path=""
+      if (value=='Service Registration'){
+        path='/registration'
+      }else if (value=='Resource Preview'){
+        path='/search'
+      }else if (value=='Process Client'){
+        path='/process'
+      }else if (value=='Tutorial'){
+        path='/tutorial'
+      }
+      this.$router.push({
+        path: path
+      })
+    }
 
   },
   computed: {
@@ -81,65 +101,14 @@ export default {
   left: 50%;
   top: 50%;
   margin-top: -25px;
-  width: 400px;
+  width: 600px;
   margin-left: -200px;
   line-height: 50px;
 }
 
-.el-menu {
-  background-color: #304156;
-  margin-bottom: 10px;
-  text-align: center;
-}
 
 .el-menu :hover {
   background-color: #304156 !important;
-}
-
-.el-menu-item {
-  min-width: 150px !important;
-  background-color: #304156 !important;
-  color: #fff !important;
-  text-align: center
-}
-
-.el-menu-item:hover {
-  background-color: #25313f !important;
-  color: #fff !important;
-}
-
-.box-abstract {
-  height: 200px;
-  margin-bottom: 10px;
-}
-
-.box-linechart {
-  height: 400px;
-  margin-bottom: 10px;
-  background: rgb(255, 255, 255);
-}
-
-.linechart {
-  left: 0;
-  right: 0;
-  height: 400px;
-  width: 100%;
-  top: 0;
-}
-
-.barchart {
-  height: 500px;
-  width: 100%;
-}
-
-.piechart {
-  height: 500px;
-  width: 100%;
-}
-
-.box-tablechart {
-  height: 500px;
-  margin-bottom: 10px;
 }
 
 .box-otherinfo {
@@ -172,5 +141,21 @@ export default {
   width: 100%;
   top: 0;
   background: rgb(255, 255, 255);
+}
+
+.el-carousel__item {
+  color: #475669;
+  font-size: 18px;
+  opacity: 0.75;
+  line-height: 200px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
 }
 </style>

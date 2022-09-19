@@ -45,7 +45,7 @@
                 </el-date-picker>
               </el-form-item>
               <el-form-item label="Other Options" size="small">
-                <el-select v-model="dataForm.options" multiple
+                <el-select v-model="dataForm.options" multiple @change="generateOptionsChange"
                            filterable
                            allow-create
                            default-first-option
@@ -59,7 +59,8 @@
                 <el-dialog title="More Options" :visible.sync="moreOption">
                   <el-form :model="dataForm" label-position="right">
                     <el-form-item label="Bands">
-                      <el-input v-model="dataForm.bands" placeholder="Default: All"></el-input>
+                      <el-input v-model="dataForm.bands"
+                                placeholder="Add bands for target dataset. Split with ; e.g. B1;B2;B3"></el-input>
                     </el-form-item>
                     <el-form-item label="Additional keywords">
                       <el-input v-model="dataForm.keywords"
@@ -117,7 +118,7 @@
             <div>
               <el-table
                 ref="singleTable" :data="tableData" border highlight-current-row @current-change="handleCurrentChange"
-                style="width: 100%" height="180"  :cell-style="{padding: '0'}"
+                style="width: 100%" height="180" :cell-style="{padding: '0'}"
                 @row-click="handleCurrentClick" class="new_table_row">
                 <el-table-column type="index" width="50"></el-table-column>
                 <el-table-column property="identifier" label="Available Services"></el-table-column>
@@ -205,13 +206,13 @@
             <el-form-item label="">
               <el-checkbox v-model="checked" @change="checkedChange">Use default input parameters</el-checkbox>
             </el-form-item>
-            <el-form-item label="Input 1">
-              <el-input placeholder="export_scale" size="small" style="width: 200px" :disabled="!checked"></el-input>
+            <el-form-item label="Input 1" v-if="checked">
+              <el-input placeholder="export_scale" size="small" style="width: 200px" :disabled="false"></el-input>
               <el-input placeholder="Resolution in meters" size="small" style="width: 200px"
                         :disabled="!checked"></el-input>
-              <el-input placeholder="float" size="small" style="width: 100px" :disabled="!checked"></el-input>
+              <el-input placeholder="float" size="small" style="width: 100px" :disabled="false"></el-input>
             </el-form-item>
-            <el-form-item label="Input 2">
+            <el-form-item label="Input 2" v-if="checked">
               <el-input placeholder="export_bounds" size="small" style="width: 200px" :disabled="!checked"></el-input>
               <el-input placeholder="A vector region to export" size="small" style="width: 200px"
                         :disabled="!checked"></el-input>
@@ -221,7 +222,7 @@
             <el-form-item v-for="(item,index) in inputForm" :label="'Input '+(index+1)" :inline="true">
               <el-input v-model="item.name" placeholder="Input Parameter" size="small" style="width: 200px"></el-input>
               <el-input v-model="item.title" placeholder="Title" size="small" style="width: 200px"></el-input>
-              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px">
+              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px" @change="typeOptionsChange">
                 <el-option
                   v-for="type in typeOptions"
                   :key="type.value"
@@ -237,7 +238,7 @@
               <el-form-item>
                 <el-input v-model="item.abstract" placeholder="Abstract" size="small" style="width: 70%"></el-input>
               </el-form-item>
-              <el-form-item :inline="true" label-position="left">
+              <el-form-item :inline="true" label-position="left" v-if="item.type!='Vector' && item.type!='Raster'">
                 <span>LiteralValuesChoice:  </span>
                 <el-radio-group v-model="item.literalValuesChoice" defaul>
                   <el-radio :label="1">AnyValue</el-radio>
@@ -422,13 +423,30 @@ export default {
       editName: false,
       selectedData: '',
       coverageDialog: false,
-      coverageInfoDialog:false,
-      xmlInfoContent:'',
+      coverageInfoDialog: false,
+      xmlInfoContent: '',
       xmlContent: '',
-      xmlResult:''
+      xmlResult: ''
     }
   },
   methods: {
+
+    generateOptionsChange(valueList) {
+      if (valueList.length > 1) {
+        let lastLndex = valueList.length - 1
+        if (valueList[lastLndex] == 'byMonth') {
+          const index = this.dataForm.options.indexOf('byYear');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
+        } else if (valueList[lastLndex] == 'byYear') {
+          const index = this.dataForm.options.indexOf('byMonth');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
+        }
+      }
+    },
     checkedChange(value) {
       this.checked = value
     },
@@ -449,6 +467,9 @@ export default {
       if (index !== 0) {
         this.inputForm.splice(index, 1)
       }
+    },
+    typeOptionsChange(value){
+      console.log(value)
     },
     //添加表单项事件
     addInputForm() {
@@ -569,8 +590,8 @@ export default {
           }
         }).then(response => {
           // console.log(response.data)
-          this.coverageInfoDialog=true
-          this.xmlInfoContent=vkbeautify.xml(response.data)
+          this.coverageInfoDialog = true
+          this.xmlInfoContent = vkbeautify.xml(response.data)
         })
       } else if (service == 'describecoverage') {
         if (this.selectedData === '') {
@@ -587,8 +608,8 @@ export default {
           }
         }).then(response => {
           // console.log(response.data)
-          this.coverageInfoDialog=true
-          this.xmlInfoContent=vkbeautify.xml(response.data)
+          this.coverageInfoDialog = true
+          this.xmlInfoContent = vkbeautify.xml(response.data)
         })
       } else if (service == 'getcoverage') {
 
@@ -599,17 +620,17 @@ export default {
           method: 'get',
           url: 'api/ws4gee/generateCoverageRequest',
           params: {
-            coverageName:this.selectedData
+            coverageName: this.selectedData
           }
         }).then(response => {
-          this.loading=false
+          this.loading = false
           this.coverageDialog = true
           this.xmlContent = vkbeautify.xml(response.data)
         })
       }
     },
     sendRequest() {
-      let url='api/ows/'+this.groupName+'/wcs'
+      let url = 'api/ows/' + this.groupName + '/wcs'
       this.$http({
         method: 'post',
         url: url,
