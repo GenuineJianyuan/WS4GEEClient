@@ -5,22 +5,23 @@
     </el-header>
     <div class="content">
       <el-collapse v-model="activeNames" >
-        <el-collapse-item title="Registration Tutorial" name="1">
-          <div><el-link type="primary">Download Instruction File</el-link> </div>
-          <div><el-link type="primary">Download Experimental Data</el-link></div>
+        <el-collapse-item title="WS4GEE Client Tutorial" name="1">
+          <div><el-link type="primary" :href="getFile('tutorial')">Download Tutorial</el-link> </div>
+          <div><el-link type="primary" :href="getExperimentalData()">Download Experimental Data</el-link></div>
         </el-collapse-item>
-        <el-collapse-item title="Process Client Tutorial" name="2">
-          <div><el-link type="primary">Download Instruction File</el-link> </div>
-          <div><el-link type="primary">Download Experimental Data</el-link></div>
-        </el-collapse-item>
-        <el-collapse-item title="Resource Preview Tutorial" name="3">
-          <div><el-link type="primary">Download Instruction File</el-link> </div>
-        </el-collapse-item>
-        <el-collapse-item title="WS4GEEServerManager Deploy Tutorial" name="3">
-          <div><el-link type="primary">Download Instruction File</el-link> </div>
+        <el-collapse-item title="WS4GEE Server Instruction" name="2">
+          <div><el-link type="primary" :href="getFile('instruction')">Download Instruction File</el-link> </div>
+          <div><el-link type="primary" disabled>Download Experimental Data</el-link></div>
         </el-collapse-item>
         <el-collapse-item title="Further Development" name="3">
-          <div>Comming soon...</div>
+          <div> In the next version, the following goals will be considered with priority:</div>
+          <div>(1) Jupyter notebook is planning to be embeded into the system to allow high-efficient GEE code/templates editing
+            to facilitate GEE-enabled WPS registration</div>
+          <div>(2) The integration with the Python package geemap is on the way for better interaction experience. See "https://geemap.org/" for more infomation</div>
+          <div>(3) More GEE functions and common-used GEE models will be deployed;</div>
+          <div>(4) Embed geo-workflow into the system; </div>
+          <div> We welcome all well-intentioned criticisms and suggestions. If you have any comments or suggestions for this project,
+            please contact with the following email: jliang@whu.edu.cn</div>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -33,6 +34,14 @@ export default {
   data(){
     return{
       activeNames: ['1']
+    }
+  },
+  methods:{
+    getFile(fileName){
+      return "api/ws4gee/tutorial?fileName="+fileName
+    },
+    getExperimentalData(){
+      return "api/ws4gee/experimentalData"
     }
   }
 }

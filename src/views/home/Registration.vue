@@ -97,7 +97,7 @@
                   :on-success="handleBoundaryAvatarSuccess"
                   class="upload-demo"
                   action="api/ws4gee/boundaryFiles/">
-                  <el-button size="small" type="primary">Import Remote Source</el-button>
+                  <el-button size="small" type="primary">Import Local Source</el-button>
                 </el-upload>
               </el-form-item>
               <el-form-item v-if="dataForm.uploadType==2">
