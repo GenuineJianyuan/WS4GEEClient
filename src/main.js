@@ -10,7 +10,6 @@ import "@/styles/index.scss"; // global css
 import App from "./App";
 import router from "./router";
 import store from "./store";
-import 'vue-cesium/lib/style.css'
 import "@/icons"; // icon
 import "./assets/css/button.css";
 import global from "./global";
@@ -36,7 +35,6 @@ axios.defaults.transformRequest = [function (data) {
 }]
 
 Vue.prototype.$axios = axios
-Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
 Vue.prototype.global = global;
