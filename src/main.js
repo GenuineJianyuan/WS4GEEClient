@@ -5,17 +5,14 @@ import "normalize.css/normalize.css"; // A modern alternative to CSS resets
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import locale from "element-ui/lib/locale/lang/zh-CN"; // lang i18n
-import echarts from "echarts";
 import "@/styles/index.scss"; // global css
-import VCharts from "v-charts";
+
 import App from "./App";
 import router from "./router";
 import store from "./store";
-import VueCesium from 'vue-cesium'
 import 'vue-cesium/lib/style.css'
 import "@/icons"; // icon
 import "./assets/css/button.css";
-// import '@/permission' // permission control
 import global from "./global";
 import axios from "axios";
 //在main.js引入qs
@@ -26,9 +23,6 @@ import qs from  'qs'
 Vue.use(ElementUI, {
   locale
 });
-Vue.use(VCharts);
-Vue.use(VueCesium)
-Vue.use(echarts);
 
 //设置axios为form-data
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
