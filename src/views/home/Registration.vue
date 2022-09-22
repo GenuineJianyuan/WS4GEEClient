@@ -1,7 +1,117 @@
 <template>
   <div class="containers">
     <el-tabs v-model="activeName" type="card" class="new_tabs_header">
-      <el-tab-pane label="Data Service Creator" name="first">
+      <el-tab-pane label="Process Service Creator" name="first">
+        <el-card>
+          <div slot="header" class="clearfix">
+            <span>WS4GEE OGC WPS Registration</span>
+          </div>
+          <el-form ref="form" :model="form" label-width="110px" label-position="right" class="wps">
+            <el-form-item label="Script Path">
+              <el-upload
+                :on-success="handleAvatarSuccess"
+                class="upload-demo"
+                accept=".py"
+                action="api/ws4gee/files/">
+                <el-button size="small" type="primary">Upload models/functions scripts</el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item label="Entrance">
+              <el-input placeholder="Function (Entrance) Name" v-model="entranceFunc" clearable
+                        size="small" style="width: 400px"></el-input>
+            </el-form-item>
+            <el-form-item label="Process Name">
+              <el-input placeholder="Process Name" v-model="processName" clearable
+                        size="small" style="width: 400px"></el-input>
+            </el-form-item>
+            <el-form-item label="Abstract">
+              <el-input placeholder="Process Abstract" v-model="processAbstract" clearable
+                        size="small" style="width: 400px"></el-input>
+            </el-form-item>
+            <el-form-item label="Title">
+              <el-input placeholder="Process Title" v-model="processTitle" clearable
+                        size="small" style="width: 400px"></el-input>
+            </el-form-item>
+            <el-divider>Default Input Parameters
+              <el-tooltip class="item" effect="dark" :content="tipContent" placement="right">
+                <el-button type="text" icon="el-icon-warning-outline" size="mini"></el-button>
+              </el-tooltip>
+            </el-divider>
+            <el-form-item label="">
+              <el-checkbox v-model="checked" @change="checkedChange">Use default input parameters</el-checkbox>
+            </el-form-item>
+            <el-form-item label="Input 1" v-if="checked">
+              <el-input placeholder="export_scale" size="small" style="width: 200px" :disabled="false"></el-input>
+              <el-input placeholder="Resolution in meters" size="small" style="width: 200px"
+                        :disabled="!checked"></el-input>
+              <el-input placeholder="float" size="small" style="width: 100px" :disabled="false"></el-input>
+            </el-form-item>
+            <el-form-item label="Input 2" v-if="checked">
+              <el-input placeholder="export_bounds" size="small" style="width: 200px" :disabled="!checked"></el-input>
+              <el-input placeholder="A vector region to export" size="small" style="width: 200px"
+                        :disabled="!checked"></el-input>
+              <el-input placeholder="Vector" size="small" style="width: 100px" :disabled="!checked"></el-input>
+            </el-form-item>
+            <el-divider>Input Parameters</el-divider>
+            <el-form-item v-for="(item,index) in inputForm" :label="'Input '+(index+1)" :inline="true">
+              <el-input v-model="item.name" placeholder="Input Parameter" size="small" style="width: 200px"></el-input>
+              <el-input v-model="item.title" placeholder="Title" size="small" style="width: 200px"></el-input>
+              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px" @change="typeOptionsChange">
+                <el-option
+                  v-for="type in typeOptions"
+                  :key="type.value"
+                  :label="type.label"
+                  :value="type.value">
+                </el-option>
+              </el-select>
+              <!-- For more input setting -->
+              <el-input v-model="item.minOccurs" style="width: 100px" placeholder="minOccurs" size="small"></el-input>
+              <el-input v-model="item.maxOccurs" style="width: 100px" placeholder="maxOccurs" size="small"></el-input>
+              <el-input v-model="item.defaultValue" style="width: 100px" placeholder="DefaultValue"
+                        size="small"></el-input>
+              <el-form-item>
+                <el-input v-model="item.abstract" placeholder="Abstract" size="small" style="width: 70%"></el-input>
+              </el-form-item>
+              <el-form-item :inline="true" label-position="left" v-if="item.type!='Vector' && item.type!='Raster'">
+                <span>LiteralValuesChoice:  </span>
+                <el-radio-group v-model="item.literalValuesChoice" defaul>
+                  <el-radio :label="1">AnyValue</el-radio>
+                  <el-radio :label="2">AllowedValues</el-radio>
+                </el-radio-group>
+                <el-input v-if="item.literalValuesChoice==2" v-model="item.literalValuesSetting"
+                          placeholder="Allow Values Setting" size="small" style="width: 200px"></el-input>
+                <span v-if="item.literalValuesChoice==2" class="demonstration">* add two or more items with ";". e.g. item1;item2</span>
+              </el-form-item>
+              <el-button type="success" size="small" icon="el-icon-plus" @click.prevent="addInputForm"></el-button>
+              <el-button type="danger" size="small" icon="el-icon-delete"
+                         @click.prevent="removeInputForm(item)"></el-button>
+            </el-form-item>
+            <el-divider>Output Parameters</el-divider>
+            <el-form-item v-for="(item, index) in outputForm" :label="'Output'+(index+1)" :inline="true">
+              <el-input v-model="item.name" placeholder="Output Parameter" size="small" style="width: 200px"></el-input>
+              <el-input v-model="item.title" placeholder="Title" size="small" style="width: 200px"></el-input>
+              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px">
+                <el-option
+                  v-for="type in typeOptions"
+                  :key="type.value"
+                  :label="type.label"
+                  :value="type.value">
+                </el-option>
+              </el-select>
+              <el-input v-model="item.abstract" placeholder="Abstract" size="small" style="width: 30%"></el-input>
+              <el-button type="success" size="small" icon="el-icon-plus" @click.prevent="addOutputForm"></el-button>
+              <el-button type="danger" size="small" icon="el-icon-delete"
+                         @click.prevent="removeOutputForm(item)"></el-button>
+            </el-form-item>
+            <el-divider></el-divider>
+            <el-form-item text-align="center">
+              <el-button type="primary" @click="onSubmit" size="medium">Register</el-button>
+              <el-button size="medium" @click="onReset">Reset</el-button>
+            </el-form-item>
+          </el-form>
+        </el-card>
+      </el-tab-pane>
+      <el-tab-pane label="Data Service Creator" name="second">
         <el-card class="box-card" shadow="always" id="searchForm">
           <div slot="header" class="clearfix">
             <span>WS4GEE Generate Engine</span>
@@ -167,116 +277,7 @@
           </div>
         </el-card>
       </el-tab-pane>
-      <el-tab-pane label="Process Service Creator" name="second">
-        <el-card>
-          <div slot="header" class="clearfix">
-            <span>WS4GEE OGC WPS Registration</span>
-          </div>
-          <el-form ref="form" :model="form" label-width="110px" label-position="right" class="wps">
-            <el-form-item label="Script Path">
-              <el-upload
-                :on-success="handleAvatarSuccess"
-                class="upload-demo"
-                accept=".py"
-                action="api/ws4gee/files/">
-                <el-button size="small" type="primary">Upload models/functions scripts</el-button>
-              </el-upload>
-            </el-form-item>
-            <el-form-item label="Entrance">
-              <el-input placeholder="Function (Entrance) Name" v-model="entranceFunc" clearable
-                        size="small" style="width: 400px"></el-input>
-            </el-form-item>
-            <el-form-item label="Process Name">
-              <el-input placeholder="Process Name" v-model="processName" clearable
-                        size="small" style="width: 400px"></el-input>
-            </el-form-item>
-            <el-form-item label="Abstract">
-              <el-input placeholder="Process Abstract" v-model="processAbstract" clearable
-                        size="small" style="width: 400px"></el-input>
-            </el-form-item>
-            <el-form-item label="Title">
-              <el-input placeholder="Process Title" v-model="processTitle" clearable
-                        size="small" style="width: 400px"></el-input>
-            </el-form-item>
-            <el-divider>Default Input Parameters
-              <el-tooltip class="item" effect="dark" :content="tipContent" placement="right">
-                <el-button type="text" icon="el-icon-warning-outline" size="mini"></el-button>
-              </el-tooltip>
-            </el-divider>
-            <el-form-item label="">
-              <el-checkbox v-model="checked" @change="checkedChange">Use default input parameters</el-checkbox>
-            </el-form-item>
-            <el-form-item label="Input 1" v-if="checked">
-              <el-input placeholder="export_scale" size="small" style="width: 200px" :disabled="false"></el-input>
-              <el-input placeholder="Resolution in meters" size="small" style="width: 200px"
-                        :disabled="!checked"></el-input>
-              <el-input placeholder="float" size="small" style="width: 100px" :disabled="false"></el-input>
-            </el-form-item>
-            <el-form-item label="Input 2" v-if="checked">
-              <el-input placeholder="export_bounds" size="small" style="width: 200px" :disabled="!checked"></el-input>
-              <el-input placeholder="A vector region to export" size="small" style="width: 200px"
-                        :disabled="!checked"></el-input>
-              <el-input placeholder="Vector" size="small" style="width: 100px" :disabled="!checked"></el-input>
-            </el-form-item>
-            <el-divider>Input Parameters</el-divider>
-            <el-form-item v-for="(item,index) in inputForm" :label="'Input '+(index+1)" :inline="true">
-              <el-input v-model="item.name" placeholder="Input Parameter" size="small" style="width: 200px"></el-input>
-              <el-input v-model="item.title" placeholder="Title" size="small" style="width: 200px"></el-input>
-              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px" @change="typeOptionsChange">
-                <el-option
-                  v-for="type in typeOptions"
-                  :key="type.value"
-                  :label="type.label"
-                  :value="type.value">
-                </el-option>
-              </el-select>
-              <!-- For more input setting -->
-              <el-input v-model="item.minOccurs" style="width: 100px" placeholder="minOccurs" size="small"></el-input>
-              <el-input v-model="item.maxOccurs" style="width: 100px" placeholder="maxOccurs" size="small"></el-input>
-              <el-input v-model="item.defaultValue" style="width: 100px" placeholder="DefaultValue"
-                        size="small"></el-input>
-              <el-form-item>
-                <el-input v-model="item.abstract" placeholder="Abstract" size="small" style="width: 70%"></el-input>
-              </el-form-item>
-              <el-form-item :inline="true" label-position="left" v-if="item.type!='Vector' && item.type!='Raster'">
-                <span>LiteralValuesChoice:  </span>
-                <el-radio-group v-model="item.literalValuesChoice" defaul>
-                  <el-radio :label="1">AnyValue</el-radio>
-                  <el-radio :label="2">AllowedValues</el-radio>
-                </el-radio-group>
-                <el-input v-if="item.literalValuesChoice==2" v-model="item.literalValuesSetting"
-                          placeholder="Allow Values Setting" size="small" style="width: 200px"></el-input>
-                <span v-if="item.literalValuesChoice==2" class="demonstration">* add two or more items with ";". e.g. item1;item2</span>
-              </el-form-item>
-              <el-button type="success" size="small" icon="el-icon-plus" @click.prevent="addInputForm"></el-button>
-              <el-button type="danger" size="small" icon="el-icon-delete"
-                         @click.prevent="removeInputForm(item)"></el-button>
-            </el-form-item>
-            <el-divider>Output Parameters</el-divider>
-            <el-form-item v-for="(item, index) in outputForm" :label="'Output'+(index+1)" :inline="true">
-              <el-input v-model="item.name" placeholder="Output Parameter" size="small" style="width: 200px"></el-input>
-              <el-input v-model="item.title" placeholder="Title" size="small" style="width: 200px"></el-input>
-              <el-select v-model="item.type" placeholder="Type" size="small" style="width: 100px">
-                <el-option
-                  v-for="type in typeOptions"
-                  :key="type.value"
-                  :label="type.label"
-                  :value="type.value">
-                </el-option>
-              </el-select>
-              <el-input v-model="item.abstract" placeholder="Abstract" size="small" style="width: 30%"></el-input>
-              <el-button type="success" size="small" icon="el-icon-plus" @click.prevent="addOutputForm"></el-button>
-              <el-button type="danger" size="small" icon="el-icon-delete"
-                         @click.prevent="removeOutputForm(item)"></el-button>
-            </el-form-item>
-            <el-divider></el-divider>
-            <el-form-item text-align="center">
-              <el-button type="primary" @click="onSubmit" size="medium">Register</el-button>
-              <el-button size="medium" @click="onReset">Reset</el-button>
-            </el-form-item>
-          </el-form>
-        </el-card>
-      </el-tab-pane>
+
     </el-tabs>
   </div>
 
