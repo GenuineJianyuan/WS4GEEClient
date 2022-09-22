@@ -60,7 +60,7 @@ export default {
   name: "ProcessClient",
   data() {
     return {
-      serviceURL: "http://127.0.0.1:8000/ws4gee/wps",
+      serviceURL: "http://43.154.247.161:8000/ws4gee/wps",
       xmlFile: "",
       xmlList: [
         {
@@ -109,7 +109,7 @@ export default {
       this.resultDialog=true
       this.$http({
         method: 'post',
-        url: 'api/ws4gee/test',
+        url: 'api/ws4gee/wps',
         data: {
           xml: this.xmlContent
         },
