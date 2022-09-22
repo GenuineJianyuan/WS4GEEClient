@@ -249,7 +249,9 @@ export default {
     },
 
     search(){
-
+      this.$alert('Coming soon', 'Message', {
+        confirmButtonText: 'OK',
+      });
     }
   }
 }
