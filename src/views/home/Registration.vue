@@ -444,7 +444,7 @@ export default {
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
-          index=this.dataForm.options.indexOf('byCustom');
+          index = this.dataForm.options.indexOf('byCustom');
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
@@ -453,7 +453,7 @@ export default {
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
-          index=this.dataForm.options.indexOf('byCustom');
+          index = this.dataForm.options.indexOf('byCustom');
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
@@ -462,10 +462,11 @@ export default {
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
-          index=this.dataForm.options.indexOf('byYear');
+          index = this.dataForm.options.indexOf('byYear');
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
+        }
       }
     },
     checkedChange(value) {
