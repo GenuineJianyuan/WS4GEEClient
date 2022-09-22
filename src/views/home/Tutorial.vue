@@ -78,7 +78,7 @@ export default {
   top: 50%;
   margin-top: -25px;
 
-  margin-left: -100px;
+  margin-left: -300px;
   line-height: 50px;
 }
 
