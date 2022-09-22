@@ -31,6 +31,7 @@
         </el-col>
       </el-row>
     </div>
+
     <div class="section1">
       <div class="table-container">
         <el-table :data="tableData" style="width: 100%;" :cell-style="{padding: '5'}" :height="450">
@@ -51,12 +52,10 @@
             </template>
           </el-table-column>
         </el-table>
+
         <el-dialog title="Preview" :visible.sync="previewDialog" width="40%">
-          <div class="imageFrame" style="text-align: center">
-            <el-image :src="img_default" fit="fill"></el-image>
-          </div>
+          <div id="map"></div>
           <div slot="footer" class="dialog-footer">
-<!--            <el-button type="primary" @click="previewDialog = false">确 定</el-button>-->
             <el-button @click="previewDialog = false">Close</el-button>
           </div>
         </el-dialog>
@@ -82,12 +81,19 @@
 
 <script>
 import vkbeautify from "vkbeautify";
+import  {Tile as TileLayer} from "ol/layer";
+import {Map, View} from "ol"
+import XYZ from "ol/source/XYZ"
+import OSM from 'ol/source/OSM'
+// import GeoTIFF  from 'ol/source/GeoTIFF';
+
 
 export default {
   name: "SearchEngine",
   data() {
     return {
       img_default: require('@/assets/default.jpg'),
+
       searchForm: {
         time: '',
         type: 'WCS',
@@ -119,9 +125,10 @@ export default {
           value: 'WPS',
           label: 'WPS'
         }],
-      xmlResult:'',
+      xmlResult: '',
       resultDialog: false,
-      previewDialog: false
+      previewDialog: false,
+      count: 0
 
     }
   },
@@ -129,18 +136,46 @@ export default {
     this.getServices(this.searchForm.type)
   },
   methods: {
-    getServices(serviceType){
-      this.tableData=[]
-      if (serviceType==='WCS'){
+    initMap() {
+      new Map({
+        target: "map",
+        layers: [
+          new TileLayer({
+            source: new OSM(),
+          }),
+          // new TileLayer({
+          //   style: {
+          //     saturation: -0.3,
+          //   }
+          //   ,
+          //   source:new GeoTIFF({
+          //     sources:[{
+          //       url:'http://127.0.0.1:8080/examples/temp/test.tif',
+          //       nodata:0
+          //     }]
+          //   })
+          // })
+        ],
+        view: new View({
+          projection: "EPSG:4326",
+          center: [103.3, 35.5],
+          zoom: 4
+        })
+      })
+    },
+
+    getServices(serviceType) {
+      this.tableData = []
+      if (serviceType === 'WCS') {
         this.$http({
           method: 'get',
           url: 'api/ws4gee/WCSService'
         }).then(response => {
-          const result=JSON.parse(response.data.replaceAll("\'", "\""))
-          if (result.code===0){
-            const WCSList=result.data
-            for (let item in WCSList){
-              let curWCS=WCSList[item]
+          const result = JSON.parse(response.data.replaceAll("\'", "\""))
+          if (result.code === 0) {
+            const WCSList = result.data
+            for (let item in WCSList) {
+              let curWCS = WCSList[item]
               this.tableData.push(
                 {
                   id: curWCS.name,
@@ -148,37 +183,37 @@ export default {
                   type: curWCS.type,
                   desr: curWCS.abstract,
                   group: curWCS.group,
-                  groupId:curWCS.groupId
+                  groupId: curWCS.groupId
                 }
               )
             }
           }
         })
-      }else if (serviceType==='WPS'){
+      } else if (serviceType === 'WPS') {
         this.$http({
           method: 'get',
           url: 'api/ws4gee/WPSService'
         }).then(response => {
-          const result=JSON.parse(response.data.replaceAll("\'", "\""))
-          if (result.code===0){
-            const WPSList=result.data
-            for (let item in WPSList){
-              let curWPS=WPSList[item]
+          const result = JSON.parse(response.data.replaceAll("\'", "\""))
+          if (result.code === 0) {
+            const WPSList = result.data
+            for (let item in WPSList) {
+              let curWPS = WPSList[item]
               this.tableData.push(
                 {
                   id: curWPS.id,
                   name: curWPS.name,
-                  title:curWPS.title,
+                  title: curWPS.title,
                   type: curWPS.type,
                   desr: curWPS.abstract
                 }
               )
             }
           }
-      })
-    }
+        })
+      }
     },
-    handleCurrentChange(){
+    handleCurrentChange() {
 
     },
     setDataType() {
@@ -187,12 +222,9 @@ export default {
     onSubmit() {
       console.log('submit!');
     },
-    setWMSLayerList(pageNum) {
-    },
-
     handleDetail(index, row) {
       console.log(index, row)
-      if (row.type==='WCS'){
+      if (row.type === 'WCS') {
         let url = 'api/ows/' + row.group + '/wcs'
         this.$http({
           method: 'get',
@@ -205,25 +237,25 @@ export default {
           }
         }).then(response => {
           // console.log(response.data)
-          this.xmlResult=response.data
+          this.xmlResult = response.data
           this.resultDialog = true
         })
-      }else if (row.type==='WPS'){
+      } else if (row.type === 'WPS') {
         console.log(row.name)
-        let url='api/ws4gee/wps'
+        let url = 'api/ws4gee/wps'
         this.$http({
           method: 'get',
           url: url,
           params: {
-            request:'DescribeProcess',
+            request: 'DescribeProcess',
             service: 'WPS',
             version: '1.1.0',
             identifier: row.name,
-            id:row.id
+            id: row.id
           }
         }).then(response => {
           // console.log(response.data)
-          this.xmlResult=response.data
+          this.xmlResult = response.data
           this.resultDialog = true
         })
       }
@@ -231,6 +263,14 @@ export default {
     },
     handlePreview(index, row) {
       this.previewDialog = true
+
+
+      if (this.count == 0) {
+        this.$nextTick(() => {
+          this.initMap()
+        })
+      }
+      this.count = +1 // solve this issue
     }
     ,
     // handleCurrentClick(row, column, event) {
@@ -248,7 +288,7 @@ export default {
       this.moreOption = true
     },
 
-    search(){
+    search() {
       this.$alert('Coming soon', 'Message', {
         confirmButtonText: 'OK',
       });
@@ -290,6 +330,10 @@ export default {
 
   }
 
+  #map {
+    height: 300px;
+    width: 100%
+  }
 
   .dialogs {
     div {
