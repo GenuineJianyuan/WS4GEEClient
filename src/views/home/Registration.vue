@@ -402,6 +402,10 @@ export default {
         }, {
           value: 'byYear',
           label: 'by year'
+        },
+        {
+          value: 'byCustom',
+          label: 'by current range'
         }],
       datasetOptions: [
         {
@@ -436,16 +440,32 @@ export default {
       if (valueList.length > 1) {
         let lastLndex = valueList.length - 1
         if (valueList[lastLndex] == 'byMonth') {
-          const index = this.dataForm.options.indexOf('byYear');
+          let index = this.dataForm.options.indexOf('byYear');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
+          index=this.dataForm.options.indexOf('byCustom');
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
         } else if (valueList[lastLndex] == 'byYear') {
-          const index = this.dataForm.options.indexOf('byMonth');
+          let index = this.dataForm.options.indexOf('byMonth');
           if (index > -1) { // only splice array when item is found
             this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
           }
-        }
+          index=this.dataForm.options.indexOf('byCustom');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
+        } else if (valueList[lastLndex] == 'byCustom') {
+          let index = this.dataForm.options.indexOf('byMonth');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
+          index=this.dataForm.options.indexOf('byYear');
+          if (index > -1) { // only splice array when item is found
+            this.dataForm.options.splice(index, 1); // 2nd parameter means remove one item only
+          }
       }
     },
     checkedChange(value) {
