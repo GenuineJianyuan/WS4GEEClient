@@ -664,12 +664,9 @@ export default {
       })
     },
     onDataGenerationSubmit() {
-      // console.log(this.dataForm.dataset, this.dataForm.service, this.dataForm.stacking, this.dataForm.daterange[0], this.dataForm.daterange[1],
-      //   this.dataForm.options,
-      //   this.dataForm.bands, this.dataForm.dataAbstract, this.dataForm.keywords, this.dataForm.uploadType, this.dataForm.uploadBoundaryContent)
       this.$http({
         method: 'post',
-        url: 'api/test/',
+        url: 'api/generate',
         data: {
           serviceType: this.dataForm.service,
           datasetName: this.dataForm.dataset,
