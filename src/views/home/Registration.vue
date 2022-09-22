@@ -511,7 +511,7 @@ export default {
         method: 'post',
         url: 'api/ws4gee/register',
         data: {
-          script: this.scriptPath,
+          scriptPath: this.scriptPath,
           entranceFunc: this.entranceFunc,
           entranceName: this.entranceName,
           processName: this.processName,
