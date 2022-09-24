@@ -107,6 +107,7 @@ export default {
     },
     sendRequest(value){
       this.xmlResult=""
+      this.loading=true
       this.resultDialog=true
       this.$http({
         method: 'post',
