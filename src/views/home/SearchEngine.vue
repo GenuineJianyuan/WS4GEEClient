@@ -40,7 +40,7 @@
           <el-table-column prop="name" label="Title" width="200"></el-table-column>
           <el-table-column prop="group" label="Group" width="200" v-if="searchForm.type=='WCS'"></el-table-column>
           <el-table-column prop="desr" label="Abstract" show-overflow-tooltip></el-table-column>
-          <el-table-column label="Operation" width="180">
+          <el-table-column label="Operation" width="280">
             <template slot-scope="scope">
               <el-button size="mini" type="text" @click="callWCS(scope.$index, scope.row)" style="color: #7299db"  v-if="searchForm.type=='WCS'">get coverage</el-button>
               <el-button size="mini" type="text" @click="handlePreview(scope.$index, scope.row)" style="color: #7299db"
