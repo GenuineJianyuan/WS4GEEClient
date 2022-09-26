@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <el-header class="header">
-      <div class="logo">Welcome to WS4GEE Client System</div>
+      <div class="logo">Welcome to WS4GEE Client System </div>
     </el-header>
     <el-carousel indicator-position="outside">
       <el-carousel-item v-for="item in this.service" :key="item" style="text-align: center"

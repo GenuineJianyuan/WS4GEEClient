@@ -634,10 +634,6 @@ export default {
           this.xmlInfoContent = vkbeautify.xml(response.data)
         })
       } else if (service == 'getcoverage') {
-
-        // if (this.selectedData === '') {
-        //   return
-        // }
         this.$http({
           method: 'get',
           url: 'api/ws4gee/generateCoverageRequest',

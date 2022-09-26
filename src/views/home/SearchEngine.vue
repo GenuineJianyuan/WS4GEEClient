@@ -42,6 +42,7 @@
           <el-table-column prop="desr" label="Abstract" show-overflow-tooltip></el-table-column>
           <el-table-column label="Operation" width="180">
             <template slot-scope="scope">
+              <el-button size="mini" type="text" @click="callWCS(scope.$index, scope.row)" style="color: #7299db"  v-if="searchForm.type=='WCS'">get coverage</el-button>
               <el-button size="mini" type="text" @click="handlePreview(scope.$index, scope.row)" style="color: #7299db"
                          v-if="searchForm.type=='WCS'">
                 preview
@@ -52,9 +53,19 @@
             </template>
           </el-table-column>
         </el-table>
-
+        <el-dialog title="GetCoverage" :visible.sync="coverageDialog"
+                   :close-on-click-modal="false">
+          <el-input type="textarea" :rows="10" resize="none" v-model="coverageXmlContent"></el-input>
+          <span>Result:</span>
+          <el-input type="textarea" :rows="10" resize="none" v-model="coverageXmlResult"></el-input>
+          <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @click="sendRequest">Submit</el-button>
+            <el-button @click="coverageDialog = false">Cancel</el-button>
+          </div>
+        </el-dialog>
         <el-dialog title="Preview" :visible.sync="previewDialog" width="40%">
           <div id="map"></div>
+          <div>* Preview through Geemap is coming soon</div>
           <div slot="footer" class="dialog-footer">
             <el-button @click="previewDialog = false">Close</el-button>
           </div>
@@ -126,6 +137,10 @@ export default {
           label: 'WPS'
         }],
       xmlResult: '',
+      coverageDialog:false,
+      curGroupName:'',
+      coverageXmlContent:'',
+      coverageXmlResult:'',
       resultDialog: false,
       previewDialog: false,
       count: 0
@@ -143,18 +158,6 @@ export default {
           new TileLayer({
             source: new OSM(),
           }),
-          // new TileLayer({
-          //   style: {
-          //     saturation: -0.3,
-          //   }
-          //   ,
-          //   source:new GeoTIFF({
-          //     sources:[{
-          //       url:'http://127.0.0.1:8080/examples/temp/test.tif',
-          //       nodata:0
-          //     }]
-          //   })
-          // })
         ],
         view: new View({
           projection: "EPSG:4326",
@@ -163,7 +166,31 @@ export default {
         })
       })
     },
-
+    callWCS(index, row){
+      this.$http({
+        method: 'get',
+        url: 'api/ws4gee/generateCoverageRequest',
+        params: {
+          coverageName: row.name
+        }
+      }).then(response => {
+        this.coverageDialog = true
+        this.curGroupName=row.group
+        this.coverageXmlContent = vkbeautify.xml(response.data)
+      })
+    },
+    sendRequest(){
+      let url = 'api/ows/' + this.curGroupName + '/wcs'
+      this.$http({
+        method: 'post',
+        url: url,
+        data: {
+          xml: this.coverageXmlContent
+        }
+      }).then(response => {
+        this.coverageXmlResult = vkbeautify.xml(response.data)
+      })
+    },
     getServices(serviceType) {
       this.tableData = []
       if (serviceType === 'WCS') {
@@ -223,7 +250,7 @@ export default {
       console.log('submit!');
     },
     handleDetail(index, row) {
-      console.log(index, row)
+      // console.log(index, row)
       if (row.type === 'WCS') {
         let url = 'api/ows/' + row.group + '/wcs'
         this.$http({
