@@ -246,11 +246,9 @@ export default {
     setDataType() {
       this.getServices(this.searchForm.type)
     },
-    onSubmit() {
-      console.log('submit!');
-    },
     handleDetail(index, row) {
-      // console.log(index, row)
+      this.resultDialog = true
+      this.xmlResult=""
       if (row.type === 'WCS') {
         let url = 'api/ows/' + row.group + '/wcs'
         this.$http({
@@ -263,12 +261,9 @@ export default {
             identifiers: row.id
           }
         }).then(response => {
-          // console.log(response.data)
           this.xmlResult = response.data
-          this.resultDialog = true
         })
       } else if (row.type === 'WPS') {
-        console.log(row.name)
         let url = 'api/ws4gee/wps'
         this.$http({
           method: 'get',
@@ -281,17 +276,13 @@ export default {
             id: row.id
           }
         }).then(response => {
-          // console.log(response.data)
           this.xmlResult = response.data
-          this.resultDialog = true
         })
       }
 
     },
     handlePreview(index, row) {
       this.previewDialog = true
-
-
       if (this.count == 0) {
         this.$nextTick(() => {
           this.initMap()

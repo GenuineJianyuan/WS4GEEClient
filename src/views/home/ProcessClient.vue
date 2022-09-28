@@ -46,8 +46,8 @@
         v-loading="loading">
       </el-input>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="resultDialog = false">确 定</el-button>
-        <el-button @click="resultDialog = false">取 消</el-button>
+        <el-button type="primary" @click="resultDialog = false">OK</el-button>
+        <el-button @click="resultDialog = false">Cancel</el-button>
       </div>
     </el-dialog>
   </div>
