@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <el-menu class="navbar" mode="horizontal">
     <hamburger
       class="hamburger-container"
@@ -8,7 +8,7 @@
     <div
       style="height: 50px;display: flex;width: 100%;position: absolute;left: 50px;background: #304156;"
     >
-      <span style="color: #fff;font-size: 1.1rem;line-height: 50px;">WS4GEE Client —— Beta Version 1.0</span>
+      <span style="color: #fff;font-size: 1.1rem;line-height: 50px;">WS4GEE Client </span>
     </div>
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
